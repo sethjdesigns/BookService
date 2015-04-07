@@ -16,5 +16,6 @@ namespace BookService.Models
 
         //navgation property
         public Author Author { get; set; }
+
     }
 }
