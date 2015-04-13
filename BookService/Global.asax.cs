@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookService.App_Start;
+using BookService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,7 @@ namespace BookService
     {
         protected void Application_Start()
         {
+            DbConfig.SeedIfNotEmpty(new BookServiceContext());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
