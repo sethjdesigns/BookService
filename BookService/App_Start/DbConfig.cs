@@ -13,6 +13,8 @@ namespace BookService.App_Start
 
         internal static void SeedIfNotEmpty(BookService.Models.BookServiceContext context)
         {
+            if (context.Authors.Any())
+                return;
             context.Authors.AddOrUpdate(x => x.Id,
               new Author() { Id = 1, Name = "Jane Austen" },
               new Author() { Id = 2, Name = "Charles Dickens" },
